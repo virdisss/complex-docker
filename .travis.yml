@@ -2,18 +2,18 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t fib-ui -f ./client/Dockerfile.dev ./client
+  - docker build -t virdisss/fib-ui -f ./client/Dockerfile.dev ./client
 script:
-  - docker run -e CI=true fib-ui npm test
+  - docker run -e CI=true virdisss/fib-ui npm test
 after_success:
-  - docker build -t multi-client ./client
-  - docker build -t multi-nginx ./nginx
-  - docker build -t multi-server ./server
-  - docker build -t multi-workder ./worker
+  - docker build -t virdisss/multi-client ./client
+  - docker build -t virdisss/multi-nginx ./nginx
+  - docker build -t virdisss/multi-server ./server
+  - docker build -t virdisss/multi-workder ./worker
   # Log in to Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to Docker hub
-  - docker push multi-client
-  - docker push multi-nginx
-  - docker push multi-server
-  - docker push multi-worker
+  - docker push virdisss/multi-client
+  - docker push virdisss/multi-nginx
+  - docker push virdisss/multi-server
+  - docker push virdisss/multi-worker
