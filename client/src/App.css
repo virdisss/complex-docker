@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 60px;
+}
+
+.App {
+  min-width: 400px;
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container input {
+  outline: 0;
+  border: 1px solid grey;
+  margin: 0 5px;
+}
+
+.form-container button {
+  outline: 0;
+}
+
+.list {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.list--inline li {
+  display: inline;
+}
+
+.list__item {
+  padding: 5px;
+}
