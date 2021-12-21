@@ -17,3 +17,15 @@ after_success:
   - docker push virdisss/multi-nginx
   - docker push virdisss/multi-server
   - docker push virdisss/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: complex-docker
+  env: Complexdocker-env
+  bucket_name:
+  bucket_path: complex-docker
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
