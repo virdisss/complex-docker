@@ -17,13 +17,12 @@ after_success:
   - docker push virdisss/multi-nginx
   - docker push virdisss/multi-server
   - docker push virdisss/multi-worker
-
 deploy:
   provider: elasticbeanstalk
   region: us-east-2
   app: complex-docker
   env: Complexdocker-env
-  bucket_name:
+  bucket_name: elasticbeanstalk-us-east-2-040070085083
   bucket_path: complex-docker
   on:
     branch: master
