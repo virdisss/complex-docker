@@ -9,7 +9,7 @@ after_success:
   - docker build -t virdisss/multi-client ./client
   - docker build -t virdisss/multi-nginx ./nginx
   - docker build -t virdisss/multi-server ./server
-  - docker build -t virdisss/multi-workder ./worker
+  - docker build -t virdisss/multi-worker ./worker
   # Log in to Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to Docker hub
